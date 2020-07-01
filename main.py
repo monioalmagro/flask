@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, request
 
 app = Flask(__name__)
 
@@ -22,7 +22,12 @@ def usuario(username,last_name,age):
 
 @app.route('/datos')
 def datos():
-    return 'Listado de datos'
+    nombre = request.args.get('nombre','') #args es un diccionario por eso usamos .get()
+    curso = request.args.get('curso','')
+    print(request.args)
+    return 'Listado de datos : ' + nombre +'  '+ curso
+
+
 
 if __name__ == "__main__":
     app.run(debug =  True, port=9000)
