@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almagro</title>
+</head>
+<body>
+    <h2>{{ username }} es de Almagro</h2>
+    <p>
+       De almagro soy yo!!!! 
+       Haciendo el curso {{ coursename }}
+    </p>
+    {% if is_premiun %}
+        <p> 
+            El curso es premiun
+        </p>
+    {% else %}
+        <p>
+            El curso es gratuito para todo el mundo
+        </p>
+    {% endif %}
+
+    {% if courses %}
+        <p>Listado de cursos :</p>
+        <ul>
+            {% for course in courses %}
+                <li>{{ course }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
