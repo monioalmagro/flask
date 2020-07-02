@@ -3,6 +3,17 @@ from flask import render_template, request
 
 app = Flask(__name__)
 
+#####################CALLBACKS
+@app.before_request
+def before_request():
+    print("antes de la petición")
+
+@app.after_request
+def after_request(response):
+    print("Despúes de la petición")
+    return response
+###########################
+
 @app.route('/')
 def index():
     name = 'Emi'
@@ -29,6 +40,7 @@ def datos():
 
 @app.route('/about')
 def about():
+    print("Estamos en el about")
     return render_template('about.html')
 
 if __name__ == "__main__":
