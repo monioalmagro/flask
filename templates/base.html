@@ -6,15 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Mensaje del archivo base</h1>
+    <a href="{{ url_for('index') }}">Index</a>
+    <a href="{{ url_for('about') }}">About</a><!--  va el nombre de la función -->
 
     {% block content %}
     {% endblock %}
 
-    {% block footer %}
-        <footer>
-            <p>Pie de página</p>
-        </footer>
-    {% endblock %}
+    
 </body>
 </html>
